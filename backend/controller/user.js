@@ -3,6 +3,8 @@ const nodemailer = require('nodemailer')
 
 module.exports.signup = (req, res) => {
     console.log(req.body);
+   
+    
     const newUser = new UserModel({
         firstname :req.body.firstname,
         lastname : req.body.lastname,
@@ -13,8 +15,10 @@ module.exports.signup = (req, res) => {
 
     newUser.save().then(() => {
         res.send({ code: 200, message: "SignUp success" })
+        
     }).catch((err) => {
-        res.send({ code: 500, message: "SignUp Err" })
+        res.send({code:500,mesage:"failed"})
+       
     })
 
 
@@ -91,6 +95,21 @@ module.exports.signin = (req, res) => {
             res.send({ code: 500, message: 'user not found' })
         })
 }
+
+module.exports.details =async(req,res)=>{
+    try{
+        const allUser = await UserModel.find({})
+        res.send({status:"ok",data:allUser})
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+
+
+
+
 
 module.exports.sendotp = async (req, res) => {
     console.log(req.body)
@@ -171,5 +190,45 @@ module.exports.submitotp = (req, res) => {
 
 
 }
+
+module.exports.deleteStudent = (req,res)=>{
+    UserModel.findByIdAndRemove(req.params.id,(error,data)=>{
+        console.log(req.param.id);
+        if (error){
+            return next(error)
+        }
+        else{
+            res.status(200).json({
+                msg:data
+            })
+        }
+    })
+}
+
+// module.exports.edit = (req,res)=>{
+//     UserModel.findById(req.params.id,(error,data)=>{
+//         if (error){
+//             return next(error)
+//         }
+//         else{
+//             res.send(data)
+//         }
+        
+//     })
+// }
+
+// module.exports.editUser = (req,res)=> {
+//     UserModel.findByIdAndUpdate(req.params.id,{
+//         newUser:req.body
+// },(error,data)=>{
+//     if(error){
+//         console.log(error);
+//         return next(error)
+//     } else{
+//         res.json(data)
+//     }
+// })
+// }
+
 
 

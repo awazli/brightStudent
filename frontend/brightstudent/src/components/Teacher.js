@@ -1,103 +1,30 @@
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
+
+
+// import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Card from 'react-bootstrap/Card';
+
 
 function Teacher() {
     return (
         <>
-        <div style={{display: 'flex'}}>
-            <Card style={{ width: '25rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Python</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Add Videos</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '25rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Javascript</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Add Videos</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '25rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Business Management</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Add Videos</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '25rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Spring Boot</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Add Videos</Button>
-                </Card.Body>
-            </Card>
 
-            </div>
-            <div style={{display: 'flex'}}>
-            <Card style={{ width: '25rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Angular</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Add Videos</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '25rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Add Videos</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '25rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>C++</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Add Videos</Button>
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '25rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Perl</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Add Videos</Button>
-                </Card.Body>
-            </Card>
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-md-3'>
+                        <div class="card">
 
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
+            <Button className='btn-danger btn-large'></Button>
 
 
         </>

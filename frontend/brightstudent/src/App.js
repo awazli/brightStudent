@@ -1,5 +1,7 @@
 import './App.css';
 import React from 'react';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,11 +17,13 @@ import NewSubmit from './components/NewSubmit';
 import Admin from './components/Admin';
 import AddTeachers from './components/AddTeachers';
 import Teacher from './components/Teacher';
+import Edit from './components/Edit';
 
 
 function App() {
   return (
     <>
+    
     <Router>
         <Routes>
           <Route path="/signup" element={<Signup />} />
@@ -30,6 +34,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/addTeachers" element={<AddTeachers />} />
           <Route path="/teacher" element={<Teacher />} />
+          <Route path ="/edit/:id" element = {<Edit />} />
           
         </Routes>
       </Router>

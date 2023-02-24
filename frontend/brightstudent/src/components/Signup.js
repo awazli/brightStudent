@@ -21,16 +21,19 @@ function Signup() {
         if (validator.isEmail(email)) {
             axios.post('http://localhost:5000/signup',
                 {
+                    firstname:firstname,
+                    lastname:lastname,
+                    username:username,
                     email: email,
                     password: password
                 })
                 .then(res => {
                     console.log(res.data)
-                    // if (res.data.code === 200) {
-                    //     alert('Signup success.')
-                    // } else {
-                    //     alert('Error.')
-                    // }
+                    if (res.data.code === 200) {
+                        alert('Signup success.')
+                    } else {
+                        alert('Error.')
+                    }
                     navigate('/signin')
                 }).catch(err => {
                     console.log(err)

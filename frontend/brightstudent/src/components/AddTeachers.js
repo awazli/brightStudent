@@ -9,14 +9,17 @@ function AddTeachers() {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    
+
     const handleSubmit = () => {
         console.log(email, password)
         axios.post('http://localhost:5000/addTeachers',
             {
+                firstname: firstname,
+                lastname: lastname,
+                username: username,
                 email: email,
                 password: password,
-                role:"t"
+                role: "t"
             })
             .then(res => {
                 console.log(res.data)
@@ -34,7 +37,7 @@ function AddTeachers() {
             <div className="outer">
                 <h1 className="center"> Add teachers </h1>
                 <div className="outcard">
-                Firstname  <br /><input
+                    Firstname  <br /><input
                         onChange={(e) => {
                             setFirstname(e.target.value)
                         }}

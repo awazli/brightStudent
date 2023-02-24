@@ -30,6 +30,10 @@ app.post("/signin",userController.signin)
 app.post("/send-otp" , userController.sendotp)
 app.post("/submit-otp" , userController.submitotp)
 app.post("/addTeachers",userController.addTeachers)
+app.get("/details",userController.details)
+app.delete("/deleteStudent/:id",userController.deleteStudent)
+// app.get("/edit/:id",userController.edit)
+// app.put("/editUser/:id",userController.editUser)
 
 app.listen(port,()=>{
     console.log(`Backend running ${port}`)
