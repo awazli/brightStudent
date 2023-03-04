@@ -1,5 +1,6 @@
 const UserModel = require('../models/user')
 const nodemailer = require('nodemailer')
+const CourseModel  = require('../models/course')
 
 module.exports.signup = (req, res) => {
     console.log(req.body);
@@ -15,6 +16,28 @@ module.exports.signup = (req, res) => {
 
     newUser.save().then(() => {
         res.send({ code: 200, message: "SignUp success" })
+        
+    }).catch((err) => {
+        res.send({code:500,mesage:"failed"})
+       
+    })
+
+
+
+}
+
+module.exports.addCourse = (req, res) => {
+    console.log(req.body);
+   
+    
+    const newCourse = new CourseModel({
+        title:req.body.title,
+        stream:req.body.stream,
+        address:req.body.address
+    })
+
+    newCourse.save().then(() => {
+        res.send({ code: 200, message: "Added" })
         
     }).catch((err) => {
         res.send({code:500,mesage:"failed"})
@@ -100,6 +123,16 @@ module.exports.details =async(req,res)=>{
     try{
         const allUser = await UserModel.find({})
         res.send({status:"ok",data:allUser})
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+module.exports.addedCourses =async(req,res)=>{
+    try{
+        const allCourse = await CourseModel.find({})
+        res.send({status:"ok",data:allCourse})
     }
     catch(error){
         console.log(error);
@@ -194,12 +227,14 @@ module.exports.submitotp = (req, res) => {
 module.exports.deleteStudent = (req,res)=>{
     UserModel.findByIdAndRemove(req.params.id,(error,data)=>{
         console.log(req.param.id);
+        console.log(data);
         if (error){
             return next(error)
         }
         else{
             res.status(200).json({
                 msg:data
+                
             })
         }
     })

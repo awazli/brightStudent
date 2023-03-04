@@ -18,6 +18,7 @@ import Admin from './components/Admin';
 import AddTeachers from './components/AddTeachers';
 import Teacher from './components/Teacher';
 import Edit from './components/Edit';
+import AddSubject from './components/AddSubject';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/addTeachers" element={<AddTeachers />} />
           <Route path="/teacher" element={<Teacher />} />
           <Route path ="/edit/:id" element = {<Edit />} />
+          <Route path = "/AddSubject" element = {<AddSubject />} />
           
         </Routes>
       </Router>

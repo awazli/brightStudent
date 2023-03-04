@@ -1,4 +1,6 @@
 import { Button, Form } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom'
+
 
 
 // import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -24,7 +26,7 @@ function Teacher() {
                     </div>
                 </div>
             </div>
-            <Button className='btn-danger btn-large'></Button>
+            <Link to = {'/AddSubject'} className='btn-danger btn-large'>Add Subject</Link>
 
 
         </>

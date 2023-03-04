@@ -26,11 +26,13 @@ mongoose.connect('mongodb://localhost:27017/test', (err,success) => {
 
 
 app.post("/signup",userController.signup)
+app.post("/addCourse",userController.addCourse)
 app.post("/signin",userController.signin)
 app.post("/send-otp" , userController.sendotp)
 app.post("/submit-otp" , userController.submitotp)
 app.post("/addTeachers",userController.addTeachers)
 app.get("/details",userController.details)
+app.get("/addedCourses",userController.addedCourses)
 app.delete("/deleteStudent/:id",userController.deleteStudent)
 // app.get("/edit/:id",userController.edit)
 // app.put("/editUser/:id",userController.editUser)

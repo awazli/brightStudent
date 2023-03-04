@@ -32,6 +32,8 @@ function Admin() {
         const result = await axios.delete("http://localhost:5000/deleteStudent/" + id)
             .then((result) => {
                alert("deleted")
+              
+               
             }).catch(() => {
                 alert("Something wrong")
             })
