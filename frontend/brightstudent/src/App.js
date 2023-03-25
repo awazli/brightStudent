@@ -19,13 +19,18 @@ import AddTeachers from './components/AddTeachers';
 import Teacher from './components/Teacher';
 import Edit from './components/Edit';
 import AddSubject from './components/AddSubject';
+import Checkout from './components/Checkout';
 
 
 function App() {
   return (
     <>
     
-    <Router>
+   <ThemeProvider
+  breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
+  minBreakpoint="xxs"
+>
+<Router>
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
@@ -37,9 +42,10 @@ function App() {
           <Route path="/teacher" element={<Teacher />} />
           <Route path ="/edit/:id" element = {<Edit />} />
           <Route path = "/AddSubject" element = {<AddSubject />} />
-          
+          <Route path = "/Checkout" element = {<Checkout />} />
         </Routes>
       </Router>
+</ThemeProvider>
     </>
   );
 }
