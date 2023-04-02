@@ -20,6 +20,8 @@ import Teacher from './components/Teacher';
 import Edit from './components/Edit';
 import AddSubject from './components/AddSubject';
 import Checkout from './components/Checkout';
+import Contact from './components/Contact';
+
 
 
 function App() {
@@ -43,6 +45,7 @@ function App() {
           <Route path ="/edit/:id" element = {<Edit />} />
           <Route path = "/AddSubject" element = {<AddSubject />} />
           <Route path = "/Checkout" element = {<Checkout />} />
+          <Route path = "/Contact" element = {<Contact />} />
         </Routes>
       </Router>
 </ThemeProvider>

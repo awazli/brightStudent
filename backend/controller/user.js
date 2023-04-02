@@ -1,6 +1,7 @@
 const UserModel = require("../models/user");
 const nodemailer = require("nodemailer");
 const CourseModel = require("../models/course");
+const ContactModel  = require('../models/contact')
 
 module.exports.signup = (req, res) => {
   console.log(req.body);
@@ -22,6 +23,28 @@ module.exports.signup = (req, res) => {
       res.send({ code: 500, mesage: "failed" });
     });
 };
+
+module.exports.contact = (req, res) => {
+  console.log(req.body);
+ 
+  
+  const newContact = new ContactModel({
+      name:req.body.name,
+      email:req.body.email,
+      query:req.body.query
+  })
+
+  newContact.save().then(() => {
+      res.send({ code: 200, message: "Added" })
+      
+  }).catch((err) => {
+      res.send({code:500,mesage:"failed"})
+     
+  })
+
+
+
+}
 
 module.exports.addCourse = (req, res) => {
   console.log(req.body);

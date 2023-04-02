@@ -29,6 +29,7 @@ function Home() {
     },[])
     
     return (<>
+    <Link to={'/Contact'} className="btn btn-primary mt-3 mb-3">Contact Us </Link>
         Home <br />
         <span>{localStorage.getItem('EMAIL')}</span>
         <button

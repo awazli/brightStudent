@@ -34,6 +34,7 @@ app.post("/addTeachers",userController.addTeachers)
 app.get("/details",userController.details)
 app.get("/addedCourses",userController.addedCourses)
 app.delete("/deleteStudent/:id",userController.deleteStudent)
+app.post("/contact",userController.contact)
 // app.get("/edit/:id",userController.edit)
 // app.put("/editUser/:id",userController.editUser)
 
